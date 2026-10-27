@@ -1,4 +1,4 @@
-const CACHE_NAME = 'ibnhazm-turath-v3';
+const CACHE_NAME = 'ibnhazm-turath-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
