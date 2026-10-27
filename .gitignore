@@ -5,3 +5,5 @@ node_modules/
 Thumbs.db
 turath_767_raw.json
 generate_curated.js
+
+.vercel
