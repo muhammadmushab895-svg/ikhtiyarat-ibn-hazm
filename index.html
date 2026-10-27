@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>موسوعة اختيارات ابن حزم الفقهية | من كتاب المُحَلَّى بالآثار</title>
+  <meta name="description" content="موسوعة فقهية شاملة تجمع جميع المسائل واختيارات وترجيحات ومفردات الإمام أبي محمد علي بن حزم الأندلسي الظاهري من كتابه المحلى بالآثار مع القراءة المباشرة من منصة تراث الرقمية." />
+  
+  <!-- إعدادات تطبيق الويب التقدمي PWA -->
+  <link rel="manifest" href="./manifest.json" />
+  <meta name="theme-color" content="#144837" />
+  <meta name="mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+  <meta name="apple-mobile-web-app-title" content="اختيارات ابن حزم" />
+  <link rel="icon" type="image/svg+xml" href="./icon.svg" />
+  <link rel="apple-touch-icon" href="./icon-192.png" />
+
+  <!-- الخطوط العربية التراثية والأيقونات -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:ital,wght@0,400;0,700;1,400&family=IBM+Plex+Sans+Arabic:wght@300;400;500;600;700&family=Scheherazade+New:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+
+  <!-- شريط العنوان والترويسة العلوية -->
+  <header class="app-header">
+    <div class="header-container">
+      <div class="brand-section" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+        <img src="./icon.svg" alt="شعار اختيارات ابن حزم" class="brand-icon" />
+        <div class="brand-text">
+          <h1>موسوعة اختيارات ابن حزم الفقهية</h1>
+          <p>من كتاب المُحَلَّى بالآثار • ربط مباشر بمنصة تراث الرقمية</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <!-- زر تثبيت التطبيق PWA -->
+        <button id="pwaInstallBtn" class="pwa-install-btn" title="تثبيت التطبيق على جهازك">
+          <i class="fa-solid fa-download"></i>
+          <span>تثبيت التطبيق</span>
+        </button>
+
+        <!-- أزرار تكبير وتصغير الخط العربي -->
+        <button id="fontDecBtn" class="icon-btn" title="تصغير حجم الخط العربي">
+          <i class="fa-solid fa-font" style="font-size:0.75rem;"></i>
+        </button>
+        <button id="fontIncBtn" class="icon-btn" title="تكبير حجم الخط العربي">
+          <i class="fa-solid fa-font" style="font-size:1.05rem;"></i>
+        </button>
+
+        <!-- زر تبديل المظهر (فاتح / ليلي / قديم) -->
+        <button id="themeToggleBtn" class="icon-btn" title="تغيير نمط المظهر (المصحف / الليلي / المخطوطات)">
+          <i class="fa-solid fa-circle-half-stroke"></i>
+        </button>
+
+        <!-- زر المفضلة في الترويسة -->
+        <button id="headerBookmarkBtn" class="icon-btn" title="عرض المسائل المحفوظة في المفضلة" onclick="document.getElementById('tabBookmarks').click()">
+          <i class="fa-solid fa-bookmark" style="color: var(--emerald);"></i>
+          <span id="bookmarkBadge" class="badge-count" style="display: none;">0</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- الحاوية الرئيسية للمحتوى -->
+  <main class="main-wrapper">
+
+    <!-- لافتة التقديم والتعريف بالكتاب -->
+    <section class="hero-banner">
+      <h2 class="hero-title-ar">المُحَلَّى بِالآثَارِ فِي شَرْحِ الْمُجَلَّى بِالإِخْتِصَارِ</h2>
+      <p class="hero-desc">
+        جامع المسائل الفقهية، والآراء والترجيحات، ومفردات الإمام أبي محمد <strong>علي بن أحمد بن سعيد بن حزم الأندلسي القرطبي الظاهري (٣٨٤ - ٤٥٦ هـ)</strong>، مع العزو الدقيق لنصوص الكتاب وقراءتها مباشرة عبر خادم <strong>تراث الرقمي</strong>، ومقارنتها بمذاهب الأئمة الأربعة (أبي حنيفة، ومالك، والشافعي، وأحمد).
+      </p>
+      <div class="hero-stats">
+        <span class="stat-pill"><i class="fa-solid fa-layer-group" style="color:var(--emerald);"></i> <strong>٢٢٥٤</strong> مسألة فقهية</span>
+        <span class="stat-pill"><i class="fa-solid fa-book" style="color:var(--emerald);"></i> <strong>٩٣</strong> كتاباً وباباً</span>
+        <span class="stat-pill"><i class="fa-solid fa-scroll" style="color:var(--emerald);"></i> <strong>١٢</strong> مجلداً مطبوعاً</span>
+        <span class="stat-pill"><i class="fa-solid fa-globe" style="color:var(--emerald);"></i> ربط مباشر بخادم <strong>تراث</strong></span>
+        <span class="stat-pill"><i class="fa-solid fa-mobile-screen" style="color:var(--emerald);"></i> يعمل دون إنترنت (PWA)</span>
+      </div>
+    </section>
+
+    <!-- بطاقة البحث والتصفية المتقدمة -->
+    <section class="search-filter-card">
+      <!-- مربع إدخال البحث -->
+      <div class="search-input-box">
+        <i class="fa-solid fa-magnifying-glass"></i>
+        <input 
+          type="text" 
+          id="searchInput" 
+          class="search-input" 
+          placeholder="ابحث في المسائل، الأبواب، الأدلة، أو اكتب رقم المسألة مباشرة (مثال: الوضوء، الغناء، الربا، طلاق البدعة، مس الذكر)..." 
+          autocomplete="off"
+        />
+        <button id="clearSearchBtn" class="clear-search-btn" title="مسح نص البحث">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <!-- أزرار التصنيفات الفقهية الكبرى (تمرير أفقي سلس) -->
+      <div id="categoryChips" class="category-chips-scroll">
+        <!-- تُبنى ديناميكياً بواسطة جافاسكربت -->
+      </div>
+
+      <!-- صف الفلاتر التفصيلية -->
+      <div class="filter-dropdowns-row">
+        <!-- اختيار الكتاب من الـ 93 كتاباً -->
+        <div>
+          <select id="kitabSelect" class="filter-select">
+            <option value="0">-- اختر الكتاب أو الباب الفقهي (٩٣ كتاباً) --</option>
+          </select>
+        </div>
+
+        <!-- اختيار الحكم التكليفي -->
+        <div>
+          <select id="hukumSelect" class="filter-select">
+            <option value="all">جميع الأحكام التكليفية</option>
+            <option value="wajib">فرض / واجب (فرض أو وجوب)</option>
+            <option value="haram">محرم / لا يحل (تحريم أو حظر)</option>
+            <option value="batal">باطل / لا يجزئ / مردود</option>
+            <option value="sah">صحيح / يجزئ</option>
+            <option value="sunnah">مستحب / سنة / ندب</option>
+            <option value="mubah">مباح / جائز / حلال</option>
+            <option value="makruh">مكروه</option>
+          </select>
+        </div>
+
+        <!-- تصفية المفردات الظاهرية فقط -->
+        <div style="display: flex; align-items: center; gap: 0.5rem; padding: 0.4rem 0;">
+          <input type="checkbox" id="munfaridCheckbox" style="accent-color: var(--emerald); width: 18px; height: 18px; cursor: pointer;" />
+          <label for="munfaridCheckbox" style="font-size: 0.88rem; font-weight: 700; cursor: pointer; color: var(--text-primary); user-select: none;">
+            <i class="fa-solid fa-star" style="color: #f59e0b;"></i> عرض مفردات ابن حزم فقط (خلاف الجمهور)
+          </label>
+        </div>
+
+        <!-- زر إعادة ضبط الفلاتر -->
+        <div>
+          <button id="resetFilterBtn" class="reset-filter-btn" title="إعادة ضبط الفلاتر والبحث">
+            <i class="fa-solid fa-rotate-left"></i> إعادة الضبط
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ألسنة التبويب الرئيسية للنتائج -->
+    <div class="nav-tabs-wrapper">
+      <div class="nav-tabs">
+        <button id="tabKatalog" class="tab-btn active">
+          <i class="fa-solid fa-book-bookmark"></i>
+          <span>جميع المسائل الفقهية</span>
+        </button>
+        <button id="tabCurated" class="tab-btn">
+          <i class="fa-solid fa-star" style="color: #f59e0b;"></i>
+          <span>المسائل الكبرى المحققة (٢٥)</span>
+        </button>
+        <button id="tabBookmarks" class="tab-btn">
+          <i class="fa-solid fa-bookmark"></i>
+          <span>المفضلة المحفوظة</span>
+        </button>
+      </div>
+
+      <div id="resultsInfo" class="results-info">
+        جارٍ تحميل المسائل...
+      </div>
+    </div>
+
+    <!-- شبكة بطاقات المسائل -->
+    <section id="cardsGrid" class="masail-grid">
+      <!-- تُعرض البطاقات ديناميكياً هنا -->
+    </section>
+
+    <!-- زر تحميل المزيد من المسائل -->
+    <div id="loadMoreContainer" class="pagination-wrapper" style="display: none;">
+      <button id="loadMoreBtn" class="load-more-btn">
+        <i class="fa-solid fa-chevron-down"></i> عرض المزيد من المسائل
+      </button>
+    </div>
+
+  </main>
+
+  <!-- نافذة قارئ تراث الرقمي المنبثقة -->
+  <div id="readerModal" class="modal-overlay">
+    <div class="reader-modal" role="dialog" aria-modal="true">
+      
+      <!-- رأس قارئ النَّص -->
+      <div class="reader-header">
+        <div class="reader-title-area">
+          <h2 id="modalTitle">عنوان المسألة</h2>
+          <p id="modalSubtitle">كتاب الطهارة • مسألة #110 • المجلد الأول، ص 90</p>
+        </div>
+        <div class="reader-controls">
+          <button id="modalCloseBtn" class="icon-btn" title="إغلاق القارئ (Esc)">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- محتوى القارئ -->
+      <div class="reader-body">
+        <!-- صندوق التحقيق والمقارنة المذهبية للمسائل الكبرى -->
+        <div id="modalCuratedBox" class="curated-analysis-box" style="display: none;"></div>
+
+        <!-- نص النشرة الأصلية المسترجع من تراث الرقمي -->
+        <div id="modalArabicText">
+          <!-- يُحمّل النص التراثي هنا مباشرة -->
+        </div>
+      </div>
+
+      <!-- شريط التنقل السفلي في القارئ -->
+      <div class="reader-footer">
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <button id="modalPrevPageBtn" class="page-nav-btn" title="الانتقال إلى الصفحة السابقة في تراث">
+            <i class="fa-solid fa-arrow-right"></i> الصفحة السابقة
+          </button>
+          <span id="modalPageInfo" style="font-size: 0.85rem; font-weight: 700; color: var(--emerald);">صفحة تراث: 70</span>
+          <button id="modalNextPageBtn" class="page-nav-btn" title="الانتقال إلى الصفحة التالية في تراث">
+            الصفحة التالية <i class="fa-solid fa-arrow-left"></i>
+          </button>
+        </div>
+
+        <div style="display: flex; align-items: center; gap: 0.5rem;">
+          <span id="modalLiveBadge" class="turath-live-badge">
+            <span class="pulse-dot"></span>
+            <span>تراث الرقمي (اتصال مباشر)</span>
+          </span>
+          <button id="modalBookmarkBtn" class="card-icon-btn" title="حفظ في المفضلة">
+            <i class="fa-regular fa-bookmark"></i>
+          </button>
+          <button id="modalCopyBtn" class="card-icon-btn" title="نسخ العزو العلمي">
+            <i class="fa-regular fa-copy"></i>
+          </button>
+          <a id="modalTurathLink" href="#" target="_blank" rel="noopener noreferrer" class="page-nav-btn" style="text-decoration: none;" title="فتح الصفحة على موقع منصة تراث">
+            <i class="fa-solid fa-arrow-up-right-from-square"></i> منصة تراث
+          </a>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- شريط التنقل السفلي للهواتف الذكية -->
+  <nav class="bottom-nav">
+    <button id="navKatalog" class="bottom-nav-item active">
+      <i class="fa-solid fa-book-bookmark"></i>
+      <span>المسائل</span>
+    </button>
+    <button id="navCurated" class="bottom-nav-item">
+      <i class="fa-solid fa-star"></i>
+      <span>المختارات</span>
+    </button>
+    <button id="navBookmarks" class="bottom-nav-item">
+      <i class="fa-solid fa-bookmark"></i>
+      <span>المفضلة</span>
+    </button>
+    <button id="navSearch" class="bottom-nav-item">
+      <i class="fa-solid fa-magnifying-glass"></i>
+      <span>البحث</span>
+    </button>
+  </nav>
+
+  <!-- تذييل الصفحة والمراجع العلمية -->
+  <footer class="app-footer">
+    <div class="footer-links">
+      <a href="https://turath.io/book/767" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-globe"></i> المصدر: منصة تراث الرقمية (كتاب رقم 767)</a>
+      <a href="https://shamela.ws" target="_blank" rel="noopener noreferrer"><i class="fa-solid fa-book"></i> المكتبة الشاملة</a>
+      <a href="javascript:void(0)" onclick="window.scrollTo({top:0, behavior:'smooth'})"><i class="fa-solid fa-arrow-up"></i> العودة إلى أعلى الصفحة</a>
+    </div>
+    <p>
+      موسوعة اختيارات الإمام الحافظ أبي محمد علي بن أحمد بن سعيد بن حزم الأندلسي الظاهري (٣٨٤ - ٤٥٦ هـ) • مستخرجة من كتاب <em>المُحَلَّى بالآثار ويليه الإيصال</em> (١٢ مجلداً).
+    </p>
+    <p style="margin-top: 0.35rem; font-size: 0.8rem;">
+      تطبيق ويب تقدمي (PWA) مهيأ بالكامل للهواتف الذكية والحواسيب • يدعم الحفظ والعمل دون اتصال بالإنترنت.
+    </p>
+  </footer>
+
+  <!-- السكربتات وقواعد البيانات المحلية -->
+  <script src="./data-kitabs.js"></script>
+  <script src="./data-masail.js"></script>
+  <script src="./data-curated.js"></script>
+  <script src="./data-turath-cache.js"></script>
+  <script src="./app.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <defs>
+    <linearGradient id="emeraldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#12372a" />
+      <stop offset="50%" stop-color="#1b4d3e" />
+      <stop offset="100%" stop-color="#0a231b" />
+    </linearGradient>
+    <linearGradient id="goldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#f6d365" />
+      <stop offset="50%" stop-color="#fda085" />
+      <stop offset="100%" stop-color="#d4af37" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="12" stdDeviation="16" flood-color="#000" flood-opacity="0.35" />
+    </filter>
+  </defs>
+
+  <!-- Background with rounded squircles -->
+  <rect width="512" height="512" rx="110" fill="url(#emeraldGrad)" />
+
+  <!-- Outer Islamic geometric ornamental border -->
+  <rect x="24" y="24" width="464" height="464" rx="90" fill="none" stroke="#d4af37" stroke-width="3" stroke-dasharray="12 6" opacity="0.6" />
+  <rect x="36" y="36" width="440" height="440" rx="80" fill="none" stroke="#d4af37" stroke-width="1.5" opacity="0.4" />
+
+  <!-- Central Star / Rosette Motif -->
+  <g transform="translate(256, 256)" filter="url(#shadow)">
+    <!-- Book silhouette -->
+    <path d="M-120,-60 C-60,-80 -20,-60 0,-40 C20,-60 60,-80 120,-60 L120,90 C60,70 20,90 0,110 C-20,90 -60,70 -120,90 Z" fill="#fcf9f2" opacity="0.95" />
+    <path d="M0,-40 L0,110" stroke="#1b4d3e" stroke-width="4" stroke-linecap="round" />
+    
+    <!-- Quill / Pen icon symbol -->
+    <circle cx="0" cy="-110" r="28" fill="url(#goldGrad)" />
+    <path d="M-6,-110 L0,-145 L6,-110 Z" fill="url(#goldGrad)" />
+
+    <!-- Text Motif Arabic "ابن حزم" -->
+    <text x="0" y="45" font-family="'Amiri', serif" font-size="44" font-weight="bold" fill="#1b4d3e" text-anchor="middle">ابن حزم</text>
+    <text x="0" y="80" font-family="'Amiri', serif" font-size="20" font-weight="bold" fill="#d4af37" text-anchor="middle">المحلى بالآثار</text>
+  </g>
+</svg>

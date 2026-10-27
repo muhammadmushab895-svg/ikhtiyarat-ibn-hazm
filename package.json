@@ -1,0 +1,21 @@
+{
+  "name": "ikhtiyarat-ibn-hazm",
+  "version": "1.0.0",
+  "description": "موسوعة اختيارات وترجيحات الإمام ابن حزم الظاهري الفقهية من المحلى بالآثار",
+  "main": "scripts/local-server.js",
+  "scripts": {
+    "start": "node scripts/local-server.js"
+  },
+  "keywords": [
+    "fiqh",
+    "ibn-hazm",
+    "al-muhalla",
+    "zahiri",
+    "turath",
+    "arabic",
+    "islamic-studies",
+    "pwa"
+  ],
+  "author": "Muhammad Mushab",
+  "license": "MIT"
+}

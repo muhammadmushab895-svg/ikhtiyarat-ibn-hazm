@@ -1,0 +1,7 @@
+node_modules/
+.vercel/
+*.log
+.DS_Store
+Thumbs.db
+turath_767_raw.json
+generate_curated.js

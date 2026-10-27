@@ -1,0 +1,35 @@
+{
+  "name": "موسوعة اختيارات ابن حزم الفقهية من كتاب المحلى بالآثار",
+  "short_name": "اختيارات ابن حزم",
+  "description": "موسوعة فقهية شاملة تجمع جميع مسائل واختيارات وترجيحات ومفردات الإمام أبي محمد علي بن حزم الأندلسي الظاهري من كتاب المحلى بالآثار مع ربط مباشر بمنصة تراث الرقمية",
+  "start_url": "./index.html",
+  "id": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#0a1612",
+  "theme_color": "#144837",
+  "orientation": "any",
+  "dir": "rtl",
+  "lang": "ar",
+  "icons": [
+    {
+      "src": "./icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["education", "books", "reference"]
+}
